@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  project000-backend-recommend:
+    image: ${RECOMMEND_IMAGE}:${RECOMMEND_TAG}
+    container_name: project000-backend-recommend
+    networks:
+      - project000-network
+    ports:
+      - "8082:8080"
+
+networks:
+  project000-network:
+    name: project000-network
+    driver: bridge
