@@ -1,6 +1,14 @@
 version: '3.8'
 
 services:
+  prject000-api-gateway:
+    image: ${API_GATEWAY_IMAGE}:${API_GATEWAY_TAG}
+    container_name: project000-api-gateway
+    networks:
+      - project000-network
+    ports:
+      - "8080:8080"
+
   project000-backend-recommend:
     image: ${RECOMMEND_IMAGE}:${RECOMMEND_TAG}
     container_name: project000-backend-recommend
