@@ -16,8 +16,16 @@ services:
       - project000-network
     ports:
       - "8082:8080"
+    environment:
+      ENCRYPTOR_KEY: /run/secrets/recommend-jasypt-key
+    secrets:
+      - recommend-jasypt-key
 
 networks:
   project000-network:
     name: project000-network
     driver: bridge
+
+secrets:
+  recommend-jasypt-key:
+    file: ./recommend-jasypt-key.txt
