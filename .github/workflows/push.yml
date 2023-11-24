@@ -27,6 +27,6 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           port: ${{ secrets.SSH_PORT }}
           script: |
-            cd /home/ubuntu
-            git clone https://github.com/dev-artisee/project000-environment.git
+            cd /home/ubuntu/project000-environment
+            git pull
             echo "Cloned project000-environment"
