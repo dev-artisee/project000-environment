@@ -17,6 +17,14 @@ services:
     ports:
       - "8082:8080"
 
+  project000-frontend:
+    image: ${FRONTEND_IMAGE}:${FRONTEND_TAG}
+    container_name: project000-frontend
+    networks:
+      - project000-network
+    ports:
+      - "80:3000"
+
 networks:
   project000-network:
     name: project000-network
